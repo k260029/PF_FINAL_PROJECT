@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Number Sliding Puzzle</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="puzzle.js" defer></script>
+    <script src="js/leaderboard.js" defer></script>
+    <script src="js/game.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Number Sliding Puzzle</h1>
+        <p>Arrange the numbers in the correct order!</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Player Setup -->
+        <section class="setup-card">
+
+            <h2>Start Your Challenge</h2>
+
+            <div class="form-group">
+                <label for="playerName">Player Name</label>
+                <input
+                    type="text"
+                    id="playerName"
+                    placeholder="Enter your name"
+                    maxlength="20"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="difficulty">Select Difficulty</label>
+
+                <select id="difficulty">
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="gridSize">Select Grid Size</label>
+
+                <select id="gridSize">
+                    <option value="3">3 × 3</option>
+                    <option value="4">4 × 4</option>
+                    <option value="5">5 × 5</option>
+                </select>
+            </div>
+
+            <button id="startBtn" class="primary-btn">
+                Start Game
+            </button>
+
+        </section>
+
+        <!-- Game Section -->
+        <section class="game-card">
+
+            <div class="game-heading">
+                <h2>Game Board</h2>
+                <span id="gameStatus">Waiting to start</span>
+            </div>
+
+            <!-- Statistics -->
+            <div class="stats">
+
+                <div class="stat-box">
+                    <span>Moves</span>
+                    <h3 id="moves">0</h3>
+                </div>
+
+                <div class="stat-box">
+                    <span>Time</span>
+                    <h3 id="timer">00:00</h3>
+                </div>
+
+                <div class="stat-box">
+                    <span>Grid</span>
+                    <h3 id="currentGrid">-</h3>
+                </div>
+
+            </div>
+
+            <!-- Puzzle Board -->
+            <div id="board" class="board">
+                <p class="empty-message">
+                    Select your difficulty and start the game.
+                </p>
+            </div>
+
+            <button id="restartBtn" class="secondary-btn" disabled>
+                Restart Game
+            </button>
+
+        </section>
+
+        <!-- Leaderboard -->
+        <section class="leaderboard-card">
+
+            <h2>Latest 5 Records</h2>
+
+            <div class="form-group">
+                <label for="leaderboardFilter">
+                    Select Leaderboard
+                </label>
+
+                <select id="leaderboardFilter">
+                    <option value="Easy">Easy Records</option>
+                    <option value="Medium">Medium Records</option>
+                    <option value="Hard">Hard Records</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Grid</th>
+                            <th>Moves</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="leaderboardBody">
+                        <tr>
+                            <td colspan="4">
+                                No records yet
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Number Sliding Puzzle | Developed using C, HTML, CSS and JavaScript</p>
+    </footer>
+
+</body>
+</html>
